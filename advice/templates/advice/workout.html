@@ -1,11 +1,21 @@
 {% extends 'advice/base.html' %}
+{% load static %}
 
 {% block title %}
     Тренировки
 {% endblock %}
 
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'advice/css/workout.css' %}">
+{% endblock %}
+
+
 {% block content %}
-<h2><a href="#">Тренировки дома</a></h2>
-<h2><a href="#">Тренировки в зале</a></h2>
-<h2><a href="#">Тренировки на улице</a></h2>
+<h1>Мышечные группы</h1>
+<ul>
+    {% for w in workout %}
+    <li><a href="#">{{ w }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
