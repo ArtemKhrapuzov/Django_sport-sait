@@ -2,19 +2,18 @@ from django.db import models
 from django.urls import reverse
 
 
-class Workout(models.Model):
-    name = models.CharField(max_length=100)
-    muscle_groups = models.CharField(max_length=200, blank=True)
-
+class Muscle(models.Model):
+    name = models.CharField(max_length=50)
+    function = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return self.name
 
-class Exercise(models.Model):
-    name = models.CharField(max_length=40)
+
+class Exercises(models.Model):
+    name = models.CharField(max_length=50)
     description = models.CharField(max_length=200, blank=True)
-    group = models.ForeignKey(Workout, on_delete=models.PROTECT, null=True)
-
+    muscle = models.ManyToManyField(Muscle, related_name='muscle')
 
     def __str__(self):
-        return self.name
+        return self.name, self.muscle

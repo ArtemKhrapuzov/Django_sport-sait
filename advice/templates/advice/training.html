@@ -12,10 +12,11 @@
 
 
 {% block content %}
-<h1>Мышечные группы</h1>
+<h1>Мышечные группы:</h1>
 <ul>
-    {% for w in workout %}
-    <li><a href="#">{{ w }}</a></li>
+    {% for muscl in muscle %}
+    <li><a href="{% url 'muscle_id' muscl.id %}">{{ muscl.name }}</a></li>
     {% endfor %}
+
 </ul>
 {% endblock %}

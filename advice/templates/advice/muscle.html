@@ -12,8 +12,10 @@
 
 
 {% block content %}
-<h1>Упражнения</h1>
+<h2>{{ muscle.name }} имеет следущие упражнения:</h2>
 <ul>
-Упр
+    {% for ex in exercise %}
+        <li>{{ ex.name }}</li>
+    {% endfor %}
 </ul>
 {% endblock %}
