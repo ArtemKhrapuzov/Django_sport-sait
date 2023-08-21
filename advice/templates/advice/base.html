@@ -13,7 +13,7 @@
 <body>
 {% block navbar %}
 <ul>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'main_menu'%}">Главная</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -36,6 +36,20 @@
         </div>
     </nav>
 </ul>
+{% endblock %}
+
+{% block left_panel %}
+
+<div class="sidenav">
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+
+
+
 {% endblock %}
 
 {% block content %}

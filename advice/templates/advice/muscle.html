@@ -7,15 +7,17 @@
 
 
 {% block css%}
-
+<link rel="stylesheet" href="{% static 'advice/css/main_menu.css' %}">
 {% endblock %}
 
 
 {% block content %}
+<div class="content">
 <h2>{{ muscle.name }} имеет следущие упражнения:</h2>
 <ul>
     {% for ex in exercise %}
         <li>{{ ex.name }}</li>
     {% endfor %}
 </ul>
+    </div>
 {% endblock %}
