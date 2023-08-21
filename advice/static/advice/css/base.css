@@ -31,7 +31,6 @@ ul {
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-
     overflow-x: hidden; /* Disable horizontal scroll */
     margin-top:57px;
     padding-top: 30px;
@@ -52,12 +51,6 @@ ul {
 
 .sidenav a:hover {
     color: #f1f1f1;
-}
-
-
-.main {
-    margin-left: 160px;
-    padding: 0px 10px;
 }
 
 
