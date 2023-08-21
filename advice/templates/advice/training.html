@@ -10,6 +10,7 @@
 
 <link rel="stylesheet" href="{% static 'advice/css/training.css' %}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'advice/css/base.css' %}">
 {% endblock %}
 
 
@@ -20,11 +21,11 @@
     {% for muscl in muscle %}
     <div class="col">
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img class="card-img-top" src="{{ muscl.image.url }}" >
             <div class="card-body">
                 <h5 class="card-title">{{ muscl.name }}</h5>
                 <p class="card-text">{{ muscl.function }}</p>
-                <a href="{% url 'muscle_id' muscl.id %}" class="btn btn-primary">Упражнения</a>
+                  <a href="{% url 'muscle_id' muscl.id %}" class="btn btn-primary">Упражнения</a>
             </div>
         </div>
     </div>

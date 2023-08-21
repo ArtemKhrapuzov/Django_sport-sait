@@ -1,0 +1,14 @@
+body {
+    background: linear-gradient(90deg, #0D8EE9 0%, #DC4A4A 100%, #fff 100%);
+
+}
+
+ul {
+    padding: 0;
+}
+.navbar {
+    background: linear-gradient(90deg, #0D8EE9 0%, #DC4A4A 100%, #fff 100%);
+    border-style: inset;
+    border-width: 1px;
+    border-color: black;
+}
