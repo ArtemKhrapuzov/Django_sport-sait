@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    padding-bottom: 55px;
+}
+
+.row {
+    padding-left: 200px;
+    padding-right: 150px;
+    padding-bottom: 55px;
+}
+
+.col {
+    padding-bottom: 55px;
+}
+
+

@@ -16,4 +16,4 @@ class Exercises(models.Model):
     muscle = models.ManyToManyField(Muscle, related_name='muscle')
 
     def __str__(self):
-        return self.name, self.muscle
+        return self.name
