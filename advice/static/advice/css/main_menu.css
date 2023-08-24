@@ -1,5 +1,4 @@
-.container {
-    margin-top:95px;
+.content {
     display:flex;
 }
 
@@ -11,3 +10,4 @@
   justify-content: center;
   align-items: center;
 }
+

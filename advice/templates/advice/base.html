@@ -49,15 +49,39 @@
 
 {% endblock %}
 
-
-{% block content %}
 <div class="container-fluid">
     <div class="content">
+        {% block content %}
+
+        {% endblock %}
     </div>
 </div>
-{% endblock %}
+
 
 {% block footer %}
+
+<footer>
+<div>
+      <div class="logo">
+        <a href="{% url 'main_menu'%}"><img class="graficlogo"
+                         src="https://papik.pro/uploads/posts/2021-11/1636176735_5-papik-pro-p-sport-logotip-foto-5.png"
+                         alt=""></a>
+    </div>
+    <div class="social">
+        <a href="#"><img class="telegram"
+                         src="https://1000logos.net/wp-content/uploads/2020/09/Telegram-Logo-2013.png"
+                         alt=""></a>
+        <a href="#"><img class="vk"
+                         src="https://online-lostark.ru/wp-content/uploads/2017/10/vk_logo.png"
+                         alt=""></a>
+        <a href="#"><img class="inst"
+                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png"
+                         alt=""></a>
+    </div>
+</div>
+
+</footer>
+
 
 {% endblock %}
 

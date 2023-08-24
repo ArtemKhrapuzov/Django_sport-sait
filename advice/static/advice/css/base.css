@@ -1,12 +1,20 @@
+html {
+    height:100%;
+}
+
 body {
     background: linear-gradient(90deg, #0D8EE9 0%, #DC4A4A 100%, #fff 100%);
-
+    min-height:100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 .content {
-    padding-left: 200px;
-    padding-right: 150px;
-    padding-bottom: 55px;
-    margin-top: 60px;
+    width:90%;
+    height: 100%;
+    padding-top:20px;
+   margin: auto;
+   height: auto;
+   height: 84%;
 }
 
 
@@ -18,6 +26,8 @@ ul {
     border-bottom: inset;
     border-width: 1px;
     border-color: black;
+    height: 8%;
+
 }
 
 .card-body {
@@ -32,8 +42,8 @@ ul {
 
 
 .sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
+    height: 87%; /* Full-height: remove this if you want "auto" height */
+    width: 10%; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0;
@@ -41,9 +51,8 @@ ul {
     overflow-x: hidden; /* Disable horizontal scroll */
     margin-top:57px;
     padding-top: 30px;
-    border-right: inset;
-    border-width: 1px;
-    border-color: black;
+
+
 }
 
 
@@ -61,8 +70,54 @@ ul {
 }
 
 
+footer {
+    width:100%;
+    height: auto;
+    border-top: inset;
+    border-width: 1px;
+    border-color: black;
+    background: black;
+    margin: 0, auto;
+    text-align:center;
+    padding-bottom: 25px;
+}
+
+text {
+color:white;
+  display: inline-block;
+
+  vertical-align: top
+
+}
+
+footer nav a:hover{
+    border-bottom: 1px solid white;
+}
+.graficlogo {
+    height: 10%;
+    width: 10%;
+}
+
+.telegram {
+    height: 3%;
+    width: 3%;
+
+}
+
+.vk {
+    height: 2%;
+    width: 2%;
+}
+
+.inst {
+    height: 2%;
+    width: 2%;
+    margin-left: 10px;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
 
