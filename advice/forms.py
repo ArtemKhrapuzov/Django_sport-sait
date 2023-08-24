@@ -15,6 +15,7 @@ SEX = (
     ('male', 'Мужской пол'),
     ('female', 'Женский пол')
 )
+
 class Calorie(forms.Form):
     sex = forms.ChoiceField(choices=SEX, label='Пол')
     weight = forms.IntegerField(min_value=35, max_value=250, label='Вес')

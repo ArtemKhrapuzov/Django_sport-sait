@@ -8,12 +8,13 @@
 
 {% block css%}
 <link rel="stylesheet" href="{% static 'advice/css/weight_loss.css' %}">
+    <link rel="stylesheet" href="{% static 'advice/css/base.css' %}">
 {% endblock %}
 
 
 {% block content %}
 <div class="content">
-    <h2>Расчет каллорий для похудения </h2>
+    <h2 style="text-align:center">Калькулятор калорий</h2>
     <form action="{% url 'weight_loss' %}" method="post">
         {% csrf_token %}
 
@@ -25,9 +26,14 @@
         <button type="submit">Расчитать</button>
     </form>
 
+    {% if result %}
+    <div class="result">
+    <h4>Сколько нужно калорий в день, чтобы вес не менялся: {{result}} ккал/день</h4>
 
-    <p>Минимальное количество калорий (энергии), которое сжигает ваш организм в состоянии покоя, необходимое для
-        обеспечения нормальной жизнедеятельности организма: {{BMR}}ккал</p>
-    <p>Необходимое колличество каллорий для похудения, с учетом вашей активности: {{result}}ккал</p>
+    <h4>Сколько нужно калорий в день для похудения: {{result_loss}} ккал/день</h4>
+
+    <h4>Сколько нужно калорий в день для набора: {{result_up}} ккал/день</h4>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

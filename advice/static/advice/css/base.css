@@ -2,6 +2,13 @@ body {
     background: linear-gradient(90deg, #0D8EE9 0%, #DC4A4A 100%, #fff 100%);
 
 }
+.content {
+    padding-left: 200px;
+    padding-right: 150px;
+    padding-bottom: 55px;
+    margin-top: 60px;
+}
+
 
 ul {
     padding: 0;

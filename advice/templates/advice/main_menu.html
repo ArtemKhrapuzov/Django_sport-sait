@@ -8,43 +8,34 @@
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'advice/css/main_menu.css' %}">
+<link rel="stylesheet" href="{% static 'advice/css/base.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <div class="content">
-    <h2 style="text-align:center">Определи свой БЖУ и узнай суточное потребление каллорий для твоей цели!</h2>
-
     <div class="container text-center">
         <div class="row">
             <div class="col">
                 <div class="card" style="width: 28rem;">
                     <img src="https://pumpmuscles.ru/wp-content/uploads/2016/03/anatomiya-myishts-cheloveka-bodibildera.jpg"
-                         class="card-img-top" alt="...">
+                         class="card-img-top ">
                     <div class="card-body">
-                        <h5 class="card-title">Похудение</h5>
-                        <p class="card-text">Может быть
-                            целью при борьбе с ожирением, для нормализации состояния здоровья и повышения физической
-                            привлекательности.</p>
+                        <h5 class="card-title">Калькулятор калорий</h5>
+                        <p class="card-text">Определи свой дневной калораж и узнай суточное потребление каллорий для
+                            твоей цели!</p>
                         <a href="{% url 'weight_loss' %}" class="btn btn-primary">Перейти к расчёту</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 33rem;">
-                    <img src="https://sportishka.com/uploads/posts/2022-11/1667496468_58-sportishka-com-p-mishtsi-korpusa-pinterest-63.png"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Набор мышечной массы</h5>
-                        <p class="card-text">Высококалорийная диета, в которой соблюден необходимый баланс между
-                            достаточным (и большим) количеством белков, углеводов и полезных жиров. </p>
-                        <a href="{% url 'weight_up' %}" class="btn btn-primary">Перейти к расчёту</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+
+        </div>
+        <p class="descript">Подсчет калорий помогает контролировать количество потребляемой пищи и поддерживать
+            здоровый вес. Если человек потребляет больше калорий, чем он тратит, то он начинает набирать вес, и
+            наоборот. Следить за калориями также иногда необходимо людям с определенными проблемами со здоровьем, такими
+            как диабет или сердечно-сосудистые заболевания, чтобы уменьшить риск развития осложнений.</p>
+    </div>
 </div>
 
 {% endblock %}

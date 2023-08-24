@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title> {% block title %} {% endblock %} </title>
@@ -41,18 +41,25 @@
 {% block left_panel %}
 
 <div class="sidenav">
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
 </div>
 
-
-
-
 {% endblock %}
+
 
 {% block content %}
+<div class="container-fluid">
+    <div class="content">
+    </div>
+</div>
 {% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
 </body>
 </html>

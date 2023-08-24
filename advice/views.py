@@ -42,17 +42,19 @@ def weight_loss(request):
             age = calorie.cleaned_data['age']
             number_of_workouts = calorie.cleaned_data['number_of_workouts']
             if sex == 'male':
-                BMR = round(88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age), 2)
+                BMR = round((10 * weight) + (6.25 * height) - (5 * age) + 5, 0)
             else:
-                BMR = round(447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age), 2)
+                BMR = round((10 * weight) + (6.25 * height) - (5 * age) - 161, 0)
             if number_of_workouts == 'Не тренируюсь':
-                result = round(BMR * 1.2 * 0.9, 2)
+                result = round(BMR * 1.2, 0)
             elif number_of_workouts == '1' or number_of_workouts == '2':
-                result = round(BMR * 1.375 * 0.9, 2)
+                result = round(BMR * 1.375, 0)
             elif number_of_workouts == '3' or number_of_workouts == '4' or number_of_workouts == '5':
-                result = round(BMR * 1.55 * 0.9, 2)
+                result = round(BMR * 1.55, 0)
             elif number_of_workouts == 'Больше 5':
-                result = round(BMR * 1.9 * 0.9, 2)
+                result = round(BMR * 1.9, 0)
+            result_loss = round(result * 0.8, 1)
+            result_up = round(result * 1.2, 1)
             context = {
                 'calorie': calorie,
                 'weight': weight,
@@ -62,6 +64,8 @@ def weight_loss(request):
                 'number_of_workouts': number_of_workouts,
                 'BMR': BMR,
                 'result': result,
+                'result_loss': result_loss,
+                'result_up': result_up,
             }
             return render(request, 'advice/weight_loss.html', context)
     else:
@@ -69,38 +73,3 @@ def weight_loss(request):
     return render(request, 'advice/weight_loss.html', {'calorie': calorie})
 
 
-def weight_up(request):
-    if request.method == 'POST':
-        calorie = Calorie(request.POST)
-        if calorie.is_valid():
-            sex = calorie.cleaned_data['sex']
-            weight = calorie.cleaned_data['weight']
-            height = calorie.cleaned_data['height']
-            age = calorie.cleaned_data['age']
-            number_of_workouts = calorie.cleaned_data['number_of_workouts']
-            if sex == 'male':
-                BMR = round(88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age), 2)
-            else:
-                BMR = round(447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age), 2)
-            if number_of_workouts == 'Не тренируюсь':
-                result = round(BMR * 1.2 * 1.1, 2)
-            elif number_of_workouts == '1' or number_of_workouts == '2':
-                result = round(BMR * 1.375 * 1.1, 2)
-            elif number_of_workouts == '3' or number_of_workouts == '4' or number_of_workouts == '5':
-                result = round(BMR * 1.55 * 1.1, 2)
-            elif number_of_workouts == 'Больше 5':
-                result = round(BMR * 1.9 * 1.1, 2)
-            context = {
-                'calorie': calorie,
-                'weight': weight,
-                'height': height,
-                'sex': sex,
-                'age': age,
-                'number_of_workouts': number_of_workouts,
-                'BMR': BMR,
-                'result': result,
-            }
-            return render(request, 'advice/weight_up.html', context)
-    else:
-        calorie = Calorie()
-    return render(request, 'advice/weight_up.html', {'calorie': calorie})
