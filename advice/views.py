@@ -1,7 +1,7 @@
-from django.shortcuts import render, reverse, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404, redirect
 from django.http import HttpResponse
 
-from .forms import Calorie
+from .forms import Calorie, AddClient
 from .models import Muscle, Exercises
 
 
@@ -30,6 +30,17 @@ def nutrition(request):
 
 def disease(request):
     return render(request, 'advice/disease.html')
+
+
+def consultation(request):
+    if request.method == 'POST':
+        client = AddClient(request.POST)
+        if client.is_valid():
+            client.save()
+            return redirect('main_menu')
+    else:
+        client = AddClient()
+    return render(request, 'advice/consultation.html', {'client': client})
 
 
 def weight_loss(request):
@@ -71,5 +82,3 @@ def weight_loss(request):
     else:
         calorie = Calorie()
     return render(request, 'advice/weight_loss.html', {'calorie': calorie})
-
-

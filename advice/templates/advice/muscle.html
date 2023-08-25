@@ -2,22 +2,23 @@
 {% load static %}
 
 {% block title %}
-    Мышечная группа
+{{ muscle.name }}
 {% endblock %}
 
 
 {% block css%}
-<link rel="stylesheet" href="{% static 'advice/css/main_menu.css' %}">
+<link rel="stylesheet" href="{% static 'advice/css/muscle.css' %}">
+    <link rel="stylesheet" href="{% static 'advice/css/base.css' %}">
 {% endblock %}
 
 
 {% block content %}
 <div class="content">
-<h2>{{ muscle.name }} имеет следущие упражнения:</h2>
-<ul>
-    {% for ex in exercise %}
+    <h2>{{ muscle.name }} имеет следущие упражнения:</h2>
+         <ul>
+        {% for ex in exercise %}
         <li>{{ ex.name }}</li>
-    {% endfor %}
-</ul>
-    </div>
+        {% endfor %}
+         </ul>
+</div>
 {% endblock %}
