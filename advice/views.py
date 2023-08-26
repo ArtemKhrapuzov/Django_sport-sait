@@ -1,8 +1,8 @@
 from django.shortcuts import render, reverse, get_object_or_404, redirect
 from django.http import HttpResponse
 
-from .forms import Calorie, AddClient
-from .models import Muscle, Exercises
+from .forms import *
+from .models import *
 
 
 def main_menu(request):
@@ -34,13 +34,16 @@ def disease(request):
 
 def consultation(request):
     if request.method == 'POST':
-        client = AddClient(request.POST)
-        if client.is_valid():
-            client.save()
-            return redirect('main_menu')
+        form = AddClient(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('main_menu')
+            except:
+                raise form.add_error(None, 'Ошибка добавления данных')
     else:
-        client = AddClient()
-    return render(request, 'advice/consultation.html', {'client': client})
+        form = AddClient()
+    return render(request, 'advice/consultation.html', {'form': form})
 
 
 def weight_loss(request):

@@ -20,7 +20,7 @@
         {% csrf_token %}
 
         {% for cal in calorie %}
-        <p><label class="form-label" for="{{ cal.id_for_label }}">{{ cal.label }}</label> {{ cal }}</p>
+        <p><label class="form-label" for="{{ cal.id_for_label }}">{{ cal.label }}: </label> {{ cal }}</p>
         <div class="form-error">{{ cal.error }}</div>
         {% endfor %}
 

@@ -1,5 +1,8 @@
 from django import forms
-from .models import *
+from django.core.validators import RegexValidator
+
+from .models import Muscle, Exercises, Client
+
 
 NUMBER_OF_WORKOUT = (
     ('Не тренируюсь', 'Не тренируюсь'),
@@ -26,6 +29,11 @@ class Calorie(forms.Form):
 
 
 class AddClient(forms.ModelForm):
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
+                                 message="Номер телефона необходимо вводить в формате: «+999999999». Допускается до 15 цифр.")
+    phone = forms.CharField(validators=[phone_regex], max_length=17)
+
     class Meta:
         model = Client
-        fields = ['first_name', 'last_name', 'phone']
+        fields = ['first_name', 'last_name', 'phone', 'target']
+

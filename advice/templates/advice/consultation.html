@@ -20,14 +20,13 @@
 
     <form action="{% url 'consultation' %}" method="post">
         {% csrf_token %}
+        <p><label class="form-label">{{ form.as_p }}</label></p>
 
-        {% for cl in client %}
-        <p><label class="form-label" for="{{ cl.id_for_label }}">{{ cl.label }}</label> {{ cl }}</p>
-        <div class="form-error">{{ cl.error }}</div>
-        {% endfor %}
 
         <button type="submit">Отправить</button>
     </form>
 </div>
 
 {% endblock %}
+
+
