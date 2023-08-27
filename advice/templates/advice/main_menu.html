@@ -13,14 +13,19 @@
 
 {% block content %}
 <div class="content">
-
+    <img style="width:700px; height:450px;  margin-top:30px;" align="left"
+         src="https://elenaportnova.ru/wp-content/uploads/c/b/c/cbc1c97a044e54d096e0132d0cac2ed1.png" alt="">
     <h1 style="text-align:center; margin-bottom:50px;">Про Cпорт</h1>
     <ul>
-        <h5 style="text-align:center; margin-bottom:20px;">Для активных людей интересующихся
-        силовыми видами спорта и правильным питанием</h5>
-        <h5 style="text-align:center; margin-bottom:20px;">Готовый справочник упражнений</h5>
-        <h5 style="text-align:center; margin-bottom:20px;">Калькулятор калорий по формуле Миффлина - Сан Жеора</h5>
-        <h4 style="text-align:center; margin-bottom:20px;">Запишись на консультацию</h4>
+        <h5 style="text-align:center; margin-bottom:20px;margin-top:30px;">Для активных людей интересующихся
+            силовыми видами спорта и правильным питанием</h5>
+        <a href="{% url 'training' %}" style="color: inherit;"><h5 style="text-align:center; margin-bottom:20px;">Готовый справочник упражнений</h5></a>
+        <a href="{% url 'calorie_calculation' %}" style="color: inherit;"><h5 style="text-align:center; margin-bottom:20px;">Калькулятор калорий по формуле Миффлина - Сан
+            Жеора</h5></a>
+        <a href="{% url 'consultation' %}" style="color: inherit;"><h4 style="text-align:center; margin-bottom:20px;">Запишись на консультацию</h4></a>
     </ul>
+    <a href="">></a>
+
+
 </div>
 {% endblock %}
