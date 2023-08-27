@@ -6,6 +6,8 @@ from django.views.generic import RedirectView
 
 from sport import settings
 
+admin.site.site_header = 'Админка'
+admin.site.index_title = 'Управление'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

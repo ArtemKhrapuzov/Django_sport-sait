@@ -27,10 +27,21 @@ def muscle(request, muscle_id):
 def nutrition(request):
     return render(request, 'advice/nutrition.html')
 
+def calorie_calculation(request):
+    return render(request, 'advice/calorie_calculation.html')
+
 
 def disease(request):
     return render(request, 'advice/disease.html')
 
+def blog(request):
+    return render(request, 'advice/blog.html')
+
+def muscle_human(request):
+    return render(request, 'advice/muscle_human.html')
+
+def questions(request):
+    return render(request, 'advice/questions.html')
 
 def consultation(request):
     if request.method == 'POST':

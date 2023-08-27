@@ -31,7 +31,7 @@ class Calorie(forms.Form):
 class AddClient(forms.ModelForm):
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Номер телефона необходимо вводить в формате: «+999999999». Допускается до 15 цифр.")
-    phone = forms.CharField(validators=[phone_regex], max_length=17)
+    phone = forms.CharField(validators=[phone_regex], max_length=17, label='Телефон')
 
     class Meta:
         model = Client

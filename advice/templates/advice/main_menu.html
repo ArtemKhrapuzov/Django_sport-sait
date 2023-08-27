@@ -7,38 +7,20 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'advice/css/main_menu.css' %}">
+
 <link rel="stylesheet" href="{% static 'advice/css/base.css' %}">
 {% endblock %}
 
 {% block content %}
-
 <div class="content">
 
-    <div class="row">
-        <div class="col">
-            <div class="card" style="width: 28rem;">
-                <img src="https://pumpmuscles.ru/wp-content/uploads/2016/03/anatomiya-myishts-cheloveka-bodibildera.jpg"
-                     class="card-img-top ">
-                <div class="card-body">
-                    <h5 class="card-title">Калькулятор калорий</h5>
-                    <p class="card-text">Определи свой дневной калораж и узнай суточное потребление каллорий для
-                        твоей цели!</p>
-                    <a href="{% url 'weight_loss' %}" class="btn btn-primary">Перейти к расчёту</a>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-    <p class="descript">Подсчет калорий помогает контролировать количество потребляемой пищи и поддерживать
-        здоровый вес. Если человек потребляет больше калорий, чем он тратит, то он начинает набирать вес, и
-        наоборот. Следить за калориями также иногда необходимо людям с определенными проблемами со здоровьем, такими
-        как диабет или сердечно-сосудистые заболевания, чтобы уменьшить риск развития осложнений.</p>
-
-
+    <h1 style="text-align:center; margin-bottom:50px;">Про Cпорт</h1>
+    <ul>
+        <h5 style="text-align:center; margin-bottom:20px;">Для активных людей интересующихся
+        силовыми видами спорта и правильным питанием</h5>
+        <h5 style="text-align:center; margin-bottom:20px;">Готовый справочник упражнений</h5>
+        <h5 style="text-align:center; margin-bottom:20px;">Калькулятор калорий по формуле Миффлина - Сан Жеора</h5>
+        <h4 style="text-align:center; margin-bottom:20px;">Запишись на консультацию</h4>
+    </ul>
 </div>
-
-
-
 {% endblock %}
