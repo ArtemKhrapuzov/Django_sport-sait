@@ -25,7 +25,7 @@ class Calorie(forms.Form):
     weight = forms.IntegerField(min_value=35, max_value=250, label='Вес')
     height = forms.IntegerField(min_value=100, max_value=230, label='Рост')
     age = forms.IntegerField(min_value=14, max_value=80, label='Возраст')
-    number_of_workouts = forms.ChoiceField(choices=NUMBER_OF_WORKOUT, label='Колличество тренировок в неделю')
+    number_of_workouts = forms.ChoiceField(choices=NUMBER_OF_WORKOUT, label='Тренировок в нед.')
 
 
 class AddClient(forms.ModelForm):
